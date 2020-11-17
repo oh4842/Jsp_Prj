@@ -37,14 +37,17 @@
 			</div>
 
 			<!-- 전적검색 -->
-			<div style="padding-top: 350px; width: auto; height: auto;'">
-				<p>
-					<img alt="전적검색로고입니다." src="image/serchlogo.png">
-				<p>
-					<input type="text"
-						style="border-radius: 5px; width: 500px; height: 20px"> <input
-						type="submit" value="검색" style="margin-left: 50px">
-			</div>
+			<form action="serch.jsp" method="get">
+				<div style="padding-top: 350px; width: auto; height: auto;'">
+					<p>
+						<img alt="전적검색로고입니다." src="image/serchlogo.png">
+					<p>
+						<input type="text"
+							style="border-radius: 5px; width: 500px; height: 20px"
+							name="serch"> <input type="submit" value="검색"
+							style="margin-left: 50px">
+				</div>
+			</form>
 		</div>
 
 		<div
@@ -68,16 +71,19 @@
 					allowfullscreen></iframe>
 			</div>
 
-			<form action="" method="post">
-				<div
+			<form action="./loginSession" method="post">
+				<%
+				if(session.getAttribute("id") == null){
+					%>
+					<div
 					style="float: right; width: 14%; text-align: left; border-radius: 10px; border: 1px solid black;">
 					<div style="margin-left: 20px; margin-top: 10px">아이디</div>
 					<div style="margin-left: 20px; margin-top: 20px">
-						<input type="text" style="width: 170px;">
+						<input type="text" style="width: 170px;" name="loginid">
 					</div>
 					<div style="margin-left: 20px; margin-top: 20px">비밀번호</div>
 					<div style="margin-left: 20px; margin-top: 20px">
-						<input type="password" style="width: 170px;">
+						<input type="password" style="width: 170px;" name="loginpassword">
 						<div
 							style="float: left; width: 30%; margin: 0 auto; margin-top: 20px; margin-bottom: 10px;">
 							<input type="submit" value="로그인">
@@ -89,6 +95,18 @@
 						</div>
 					</div>
 				</div>
+					<%
+				}else{
+					%>
+					<div
+					style="float: right; width: 14%; text-align: left; border-radius: 10px; border: 1px solid black;">
+					<div><%=session.getAttribute("nickname")%>님 반갑습니다.</div>
+					</div>
+					
+					<%
+				}
+				%>
+				
 			</form>
 		</div>
 
