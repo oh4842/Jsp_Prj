@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <link href="css/default.css" rel="stylesheet" type="text/css"
 	media="all" />
-<title>Insert title here</title>
+<title>메인화면</title>
 </head>
 <body style="margin: 0">
 	<!-- 전체 -->
@@ -26,13 +26,13 @@
 				<ul style="margin: 0; padding: 0;">
 					<li
 						style="float: left; list-style: none; padding: 10px 0px 0px 50px;"><a
-						href="#" style="color: #FFFFFF; text-decoration: none;">Home</a>
+						href="#" style="color: #FFFFFF; text-decoration: none;"><font size="4px">Home</font></a>
 					<li
 						style="float: left; list-style: none; padding: 10px 0px 0px 50px;"><a
-						href="#" style="color: #FFFFFF; text-decoration: none;">커뮤니티</a>
+						href="FreeBorderForm.jsp" style="color: #FFFFFF; text-decoration: none;"><font size="4px">커뮤니티</font></a>
 					<li
 						style="float: left; list-style: none; padding: 10px 0px 0px 50px;"><a
-						href="#" style="color: #FFFFFF; text-decoration: none;">사용방법</a>
+						href="#" style="color: #FFFFFF; text-decoration: none;"><font size="4px">사용방법</font></a>
 				</ul>
 			</div>
 

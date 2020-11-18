@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 화면</title>
 </head>
 <body style="margin: 0;">
 	<form action="signUpDB.jsp" method="post">

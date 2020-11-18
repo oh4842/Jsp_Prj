@@ -97,7 +97,6 @@ public class DBUtill {
 			e.printStackTrace();
 		}
 	}
-
 	public static void close(Statement stmt) {
 		try {
 			if (stmt != null) {
@@ -107,7 +106,6 @@ public class DBUtill {
 			e.printStackTrace();
 		}
 	}
-
 	public static void close(PreparedStatement pstmt) {
 		try {
 			if (pstmt != null) {
@@ -117,7 +115,6 @@ public class DBUtill {
 			e.printStackTrace();
 		}
 	}
-
 	public static void close(ResultSet rs) {
 		try {
 			if (rs != null) {
