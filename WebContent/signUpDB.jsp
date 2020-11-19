@@ -17,8 +17,8 @@
 </head>
 <body>
 	<%
-	int flagid = 0; // 이름 중복여부
-	int flagname = 0; // 닉네임 중복여부
+	int flagid = 1; // 이름 중복여부
+	int flagname = 1; // 닉네임 중복여부
 	PreparedStatement pstmt = null;	
 	ResultSet rs = null;
 	
