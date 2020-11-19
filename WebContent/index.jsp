@@ -99,8 +99,13 @@
 				}else{
 					%>
 					<div
-					style="float: right; width: 14%; text-align: left; border-radius: 10px; border: 1px solid black;">
-					<div><%=session.getAttribute("nickname")%>님 반갑습니다.</div>
+					style="float: right; width: 14%; text-align: center; border-radius: 10px; border: 1px solid black;">
+						<div>
+								<p>
+								<%=session.getAttribute("nickname")%>님 반갑습니다.
+								<p>
+								<a href="loginout.jsp"><input type="button" value="로그아웃"></a>
+						</div>
 					</div>
 					
 					<%

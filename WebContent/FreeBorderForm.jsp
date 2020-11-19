@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,23 +32,67 @@
 		</div>
 
 		<!-- body -->
-		<div style="text-align: center; margin-top: 30px; padding-bottom: 30px;">
+		<div
+			style="text-align: center; margin-top: 30px; padding-bottom: 30px;">
 			<div style="display: inline-block;">
 				<!-- 로그인정보 -->
-				<div style= "float: left; height: 500px; width: 250px; border-radius: 5px; border: 1px solid black; background-color: #FFFFFF;">
-					<div>
-						<p style="text-align: left; margin-left: 20px;"> 아이디
-						<p style="text-align: left; margin-left: 20px;"> <input type="text" placeholder="아이디를 입력하세요." style="width: 200px;">
-						<p style="text-align: left; margin-left: 20px;"> 비밀번호
-						<p style="text-align: left; margin-left: 20px;"> <input type="password" placeholder="비밀번호를 입력하세요." style="width: 200px;"> 
-					</div>
+				<div
+					style="float: left; height: 500px; width: 250px; border-radius: 5px; border: 1px solid black; background-color: #FFFFFF; text-align: left;">
+
+					<form action="./loginSession" method="post">
+						<%
+							if (session.getAttribute("id") == null) {
+						%>
+						<div style="border: 1px solid black;">
+							<div style="margin-left: 20px; float: left;">아이디</div>
+							<div style="margin-left: 20px; margin-top: 20px; float: left;">
+								<input type="text" style="width: 180px;" name="loginid">
+							</div>
+							<div style="margin-left: 20px; margin-top: 20px; float: left;">비밀번호</div>
+							<div style="margin-left: 20px; margin-top: 20px;">
+								<input type="password" style="width: 180px;"
+									name="loginpassword">
+								<div
+									style="float: left; width: 30%; margin: 0 auto; margin-top: 20px; margin-bottom: 10px;">
+									<input type="submit" value="로그인">
+								</div>
+								<div
+									style="float: left; width: 30%; margin: 0 auto; margin-top: 20px; margin-bottom: 10px;'">
+									<a href="signUpForm.jsp"><input type="button" value="회원가입"
+										style="margin-left: 50px"></a>
+								</div>
+							</div>
+						</div>
+						<%
+							} else {
+						%>
+						<div
+							style="border-radius: 10px; border: 1px solid black; text-align: center;">
+							<div>
+								<p>
+								<%=session.getAttribute("nickname")%>님 반갑습니다.
+								<p>
+								<a href="loginout.jsp"><input type="button" value="로그아웃"></a>
+							</div>
+						</div>
+						<%
+							}
+						%>
+
+					</form>
+
 				</div>
-				
+
 				<!-- 게시판 -->
-				<div style="float: right; margin-left: 20px; border: 1px solid black; border-radius: 5px; background-color: #FFFFFF;">
+				<div
+					style="float: right; margin-left: 20px; border: 1px solid black; border-radius: 5px; background-color: #FFFFFF;">
 					<table>
 						<tr>
 							<td colspan="5" style="border-bottom: thick double gray;">게시판
+
+
+
+							
 						<tr>
 							<td style="width: 100px;">번호
 							<td style="width: 500px;">제목
@@ -59,7 +103,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- footer -->
 		<div
 			style="background-color: #C6EBED; height: 150px; margin-top: 100px; text-align: center;">

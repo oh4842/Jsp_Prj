@@ -14,7 +14,6 @@ public class FreeBoardDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private Connection conn;
-	private int result = 0;
 	
 	public  FreeBoardDAO(){
 		try {
@@ -29,25 +28,24 @@ public class FreeBoardDAO {
 		}
 	}
 	
-	public int write(String id) {
-		String sql = "insert into board (idx, title, comment, id, hit, date) values (?, ?, ?, ?, 0, sysdate)";
+	public boolean write(String id) {
+		String sql = "insert into board (title, comment, id, hit) values (?, ?, ?, ?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1, freeBorderDTO.getIdx());
-			pstmt.setString(2, freeBorderDTO.getTitle());
-			pstmt.setString(3, freeBorderDTO.getComment());
-			pstmt.setString(4, freeBorderDTO.getId());
-			pstmt.setInt(5, freeBorderDTO.getHit());
+			pstmt.setString(1, freeBorderDTO.getTitle());
+			pstmt.setString(2, freeBorderDTO.getComment());
+			pstmt.setString(3, freeBorderDTO.getId());
+			pstmt.setInt(4, freeBorderDTO.getHit());
 			
 			result = pstmt.executeUpdate();
 			
-			return result;
+			return true;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}	
-		return result;
+		return false;
 	}
 	
 }
