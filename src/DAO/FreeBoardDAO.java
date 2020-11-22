@@ -39,7 +39,7 @@ public class FreeBoardDAO {
 			pstmt.setString(3, freeBorderDTO.getId());
 			pstmt.setInt(4, freeBorderDTO.getHit());
 			
-			result = pstmt.executeUpdate();
+			rs = pstmt.executeUpdate();
 			
 			return true;
 		} catch (Exception e) {

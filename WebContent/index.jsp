@@ -37,7 +37,7 @@
 			</div>
 
 			<!-- 전적검색 -->
-			<form action="serch.jsp" method="get">
+			<form action="./crwal" method="post">
 				<div style="padding-top: 350px; width: auto; height: auto;'">
 					<p>
 						<img alt="전적검색로고입니다." src="image/serchlogo.png">
@@ -49,6 +49,7 @@
 				</div>
 			</form>
 		</div>
+		
 
 		<div
 			style="width: 100%; height: auto; display: inline-block; margin-top: 20px; text-align: center;">

@@ -9,40 +9,165 @@ import org.jsoup.select.Elements;
 
 
 public class crawling {
-	public static void main(String[] args) {
-		// Jsoup¸¦ ÀÌ¿ëÇØ¼­ http://www.cgv.co.kr/movies/ Å©·Ñ¸µ
-		String url = "https://www.op.gg/summoner/userName=%EC%8B%AC%ED%95%B4%EB%A1%9C"; //Å©·Ñ¸µÇÒ urlÁöÁ¤
-		Document doc = null;        //Document¿¡´Â ÆäÀÌÁöÀÇ ÀüÃ¼ ¼Ò½º°¡ ÀúÀåµÈ´Ù
-
+	
+	public static Document doc = null;        //Documentï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È´ï¿½
+	public static Iterator<Element> ie1;
+	public static Elements element;
+	
+	public static String Url(String url) {
+		url = "https://www.op.gg/summoner/userName=" + url;
+		System.out.print("í¬ë¡¤ë§í•¨ìˆ˜"+url);
+		return url;
+	}
+	
+	public static String TierRank(String url) {
+		String tierrank;
 		try {
 			doc = Jsoup.connect(url).get();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		//select¸¦ ÀÌ¿ëÇÏ¿© ¿øÇÏ´Â ÅÂ±×¸¦ ¼±ÅÃÇÑ´Ù. select´Â ¿øÇÏ´Â °ªÀ» °¡Á®¿À±â À§ÇÑ Áß¿äÇÑ ±â´ÉÀÌ´Ù.
-		Elements element = doc.select("div.SummonerRatingMedium");
-		Elements element2 = doc.select("div.Header");
-
-		System.out.println("============================================================");
-
-		//IteratorÀ» »ç¿ëÇÏ¿© ÇÏ³ª¾¿ °ª °¡Á®¿À±â
-		Iterator<Element> ie1 = element.select("div.TierRank").iterator();
-		Iterator<Element> ie2 = element.select("span.LeaguePoints").iterator();
-		Iterator<Element> ie3 = element.select("span.wins").iterator();
-		Iterator<Element> ie4 = element.select("span.losses").iterator();
-		Iterator<Element> ie5 = element.select("span.winratio").iterator();
 		
-		Iterator<Element> ie6 = element2.select("span.Name").iterator();
-		Iterator<Element> ie7 = element2.select("span.ranking").iterator();
-		Iterator<Element> ie8 = element2.select("div.ProfileIcon").iterator();
-		
-		System.out.println(ie6.next().text()+"\t"+ie7.next().text()+"\t"+ie8.next().text());
-		while (ie1.hasNext()) {
-			System.out.println(ie1.next().text() + "\t" + ie2.next().text() + "\t" + ie3.next().text() + "\t"
-					+ ie4.next().text() + "\t" + ie5.next().text());
-			
+		element = doc.select("div.SummonerRatingMedium");
+		ie1 = element.select("div.TierRank").iterator();
+		tierrank  = ie1.next().text();
+		return tierrank;
+	}
+	
+	public static String LeaguePoints(String url) {
+		String points;
+		try {
+			doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
-		System.out.println("============================================================");
+		element = doc.select("div.SummonerRatingMedium");
+		ie1 = element.select("span.LeaguePoints").iterator();
+		points  = ie1.next().text();
+		return points;
 	}
+	
+	public static String Wins(String url) {
+		String wins;
+		try {
+			doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		element = doc.select("div.SummonerRatingMedium");
+		ie1 = element.select("span.wins").iterator();
+		wins = ie1.next().text();
+		return wins;
+	}
+	
+	public static String Losses(String url) {
+		String losses;
+		try {
+			doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		element = doc.select("div.SummonerRatingMedium");
+		ie1 = element.select("span.losses").iterator();
+		losses = ie1.next().text();
+		return losses;
+	}
+	
+	public static String Winratio(String url) {
+		String winratio;
+		try {
+			doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		element = doc.select("div.SummonerRatingMedium");
+		ie1 = element.select("span.winratio").iterator();
+		winratio = ie1.next().text();
+		return winratio;
+	}
+	
+
+	public static String Name(String url) {
+		String name;
+		try {
+			doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		element = doc.select("div.Header");
+		ie1 = element.select("span.Name").iterator();
+		name = ie1.next().text();
+		return name;
+	}
+	
+	public static String Ranking(String url) {
+		String ranking;
+		try {
+			doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		element = doc.select("div.Header");
+		ie1 = element.select("span.ranking").iterator();
+		ranking = ie1.next().text();
+		return ranking;
+	}
+	
+	public static String ProfileIcon(String url) {
+		String profileIcon;
+		try {
+			doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		element = doc.select("div.Header");
+		ie1 = element.select("div.ProfileIcon").iterator();
+		profileIcon = ie1.next().text();
+		return profileIcon;
+	}
+	
+	/*
+	 * public static void main(String[] args) { // Jsoupï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ø¼ï¿½
+	 * http://www.cgv.co.kr/movies/ Å©ï¿½Ñ¸ï¿½ String url =
+	 * "https://www.op.gg/summoner/userName=%EC%8B%AC%ED%95%B4%EB%A1%9C"; //Å©ï¿½Ñ¸ï¿½ï¿½ï¿½
+	 * urlï¿½ï¿½ï¿½ï¿½ Document doc = null; //Documentï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½Ò½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È´ï¿½
+	 * 
+	 * try { doc = Jsoup.connect(url).get(); } catch (IOException e) {
+	 * e.printStackTrace(); } //selectï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Â±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. selectï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì´ï¿½. Elements element =
+	 * doc.select("div.SummonerRatingMedium"); Elements element2 =
+	 * doc.select("div.Header");
+	 * 
+	 * 
+	 * System.out.println(
+	 * "============================================================");
+	 * System.out.println(Url("ì‹¬í•´ë¡œ")); //Iteratorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * Iterator<Element> ie1 = element.select("div.TierRank").iterator();
+	 * Iterator<Element> ie2 = element.select("span.LeaguePoints").iterator();
+	 * Iterator<Element> ie3 = element.select("span.wins").iterator();
+	 * Iterator<Element> ie4 = element.select("span.losses").iterator();
+	 * Iterator<Element> ie5 = element.select("span.winratio").iterator();
+	 * 
+	 * Iterator<Element> ie6 = element2.select("span.Name").iterator();
+	 * Iterator<Element> ie7 = element2.select("span.ranking").iterator();
+	 * Iterator<Element> ie8 = element2.select("div.ProfileIcon").iterator();
+	 * Iterator<Element> ie9 = element2.select("div.borderImage").iterator();
+	 * 
+	 * System.out.println(ie6.next().text()+"\t"+ie7.next().text()+"\t"+ie8.next().
+	 * text()); while (ie1.hasNext()) { System.out.println(ie1.next().text() + "\t"
+	 * + ie2.next().text() + "\t" + ie3.next().text() + "\t" + ie4.next().text() +
+	 * "\t" + ie5.next().text());
+	 * 
+	 * }
+	 * 
+	 * System.out.println(
+	 * "============================================================"); }
+	 */
 }
