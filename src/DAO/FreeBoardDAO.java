@@ -18,7 +18,7 @@ public class FreeBoardDAO {
 	public  FreeBoardDAO(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String dbURL = "jdbc:mysql://localhost:3306/jspprj?serverTimezone=UTC"; // localhost:3306 Æ÷Æ®´Â ÄÄÇ»ÅÍ¼³Ä¡µÈ mysqlÁÖ¼Ò
+			String dbURL = "jdbc:mysql://localhost:3306/jspprj?serverTimezone=UTC"; // localhost:3306 ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½Í¼ï¿½Ä¡ï¿½ï¿½ mysqlï¿½Ö¼ï¿½
 			/* useUnicode=true&characterEncoding=UTF-8 */
 			String dbID = "root";
 			String dbPassword = "1234";
@@ -39,7 +39,7 @@ public class FreeBoardDAO {
 			pstmt.setString(3, freeBorderDTO.getId());
 			pstmt.setInt(4, freeBorderDTO.getHit());
 			
-			rs = pstmt.executeUpdate();
+			pstmt.executeUpdate();
 			
 			return true;
 		} catch (Exception e) {
