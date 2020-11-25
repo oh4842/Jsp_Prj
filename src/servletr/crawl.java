@@ -1,7 +1,6 @@
 package servletr;
 
 import java.io.IOException;
-import java.net.URL;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -13,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import user.crawling;
 
-/**
- * Servlet implementation class crwal
- */
 @WebServlet("/crwal")
 public class crawl extends HttpServlet {
 	private static final long serialVersionUID = 1L;

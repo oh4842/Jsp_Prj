@@ -97,7 +97,7 @@ public class BoardDAO {
 		}
 		return null;
 	}
-	
+	// 조회수 증가
 	public void hitUpdate(String idx) {
 		String sql = "update border set hit = hit + 1 where idx = ?";
 		try {
@@ -108,4 +108,6 @@ public class BoardDAO {
 			// TODO: handle exception
 		}
 	}
+	
+	
 }

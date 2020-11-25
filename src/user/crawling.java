@@ -16,7 +16,6 @@ public class crawling {
 	
 	public static String Url(String url) {
 		url = "https://www.op.gg/summoner/userName=" + url;
-		System.out.print("크롤링함수"+url);
 		return url;
 	}
 	
