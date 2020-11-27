@@ -52,11 +52,7 @@
 		</div>
 
 		<!-- footer -->
-		<div
-			style="background-color: #C6EBED; height: 150px; margin-top: 100px; text-align: center;">
-			<font style="line-height: 150px">Copyright ⓒ2020. 배승수. All
-				rights reserved.</font>
-		</div>
+		<jsp:include page="footer.jsp"/>
 	</div>
 </body>
 </html>

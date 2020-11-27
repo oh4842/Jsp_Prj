@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/defult.css" rel="stylesheet" type="text/css" media="all" />
 <meta charset="UTF-8">
 <title>전적검색</title>
 </head>
@@ -60,48 +61,47 @@
 			style="margin-top: 30px; margin-left: 200px; margin-right: 200px;">
 			<!-- 티어 및 정보표시 -->
 			<div
-				style="border: 1px solid black; height: 200px; background-color: #FFFFFF;">
+				style="border: 1px solid black; border-radius: 10px; height: 200px; background-color: #FFFFFF;">
 				<!-- 소환사아이콘 -->
 				<div
 					style="float: left; width: 100px; height: 100px; text-align: center;">
 					<p>
-						<img alt="전적정보 소환사 아이콘" src="image/signlogo.png">
+						<img alt="전적정보 소환사 아이콘" src="image/UserLogo.png" width="150px" height="130px">
 					<p>
-						<%=profileIcon%>
+						<font style="margin-left: 40px" size="4px"><%=profileIcon%></font>
+						
 				</div>
 
 				<div style="float: left; margin-left: 60px; text-align: left;">
-					<div>
+					<div style="padding-top: 5px; padding-bottom: 5px;">
 						<font size="4px"><%=name%> </font>
 					</div>
-					<div>
+					<div style="padding-top: 5px; padding-bottom: 5px;">
 						<font size="4px">래더 랭킹 <%=ranking%>위
 						</font>
 					</div>
-					<div>
+					<div style="padding-top: 5px; padding-bottom: 5px;">
 						<font size="4px">티어 <%=tierrank%> | <%=points%></font>
 					</div>
-					<div>
+					<div style="padding-top: 5px; padding-bottom: 5px;">
 						<font size="4px">승리 <%=wins%> / 패배 <%=losses%> / 승률 <%=winratio%></font>
 					</div>
 				</div>
 			</div>
+			
 
 			<div
 				style="text-align: center; border: 1px solid black; height: auto; width: 100%; margin-top: 30px; background-color: #FFFFFF;">
 				<form action="./serchComWrite" method="post">
 					<input type="hidden" name="username" value="<%=name%>">
-					<table style="width: 100%">
+					<table style="width: 100%; border-collapse: collapse;">
 						<tr>
-							<td colspan="4" style="border-bottom: thick double gray;">유저평가
-
-
-							
+							<td colspan="4" style="border-bottom: thick double gray; padding-top: 10px; padding-bottom: 10px;">유저평가	
 						<tr>
-							<td style="width: 10%;">번호
-							<td style="width: 60%;">내용
-							<td style="width: 10%;">작성자
-							<td style="width: 20%;">작성일
+							<td class="freeTd" style="width: 10%;">번호
+							<td class="freeTd" style="width: 60%;">내용
+							<td class="freeTd" style="width: 10%;">작성자
+							<td class="freeTd" style="width: 20%;">작성일
 							<%
 								for (int i = 0; i < serchList.size(); i++) {
 								String idx = serchList.get(i).getIdx();
@@ -110,28 +110,31 @@
 								String datestr = serchList.get(i).getDate();
 							%>
 						<tr>
-							<td><%= idx %>
-							<td><%=comment %>
-							<td><%=writer %>
-							<td><%=datestr %>
+							<td class="freeTd"><font size="5px">┕</font>
+							<td class="freeTd"><%=comment %>
+							<td class="freeTd"><%=writer %>
+							<td class="freeTd"><%=datestr %>
 							<%
 								}
 							%>
+							<input type="hidden" name = "tierrank" value="<%=tierrank%>">
+							<input type="hidden" name = "name" value="<%=name%>">
+							<input type="hidden" name = "points" value="<%=points%>">
+							<input type="hidden" name = "wins" value="<%=wins%>">
+			<input type="hidden" name = "losses" value="<%=losses%>">
+			<input type="hidden" name = "winratio" value="<%=winratio%>">
+			<input type="hidden" name = "profileIcon" value="<%=profileIcon%>">
 						<tr>
-							<td style="width: 80%" colspan="3"><input type="text"
+							<td style="width: 80%; padding-top: 5px; padding-bottom: 5px;" colspan="3"><input type="text"
 								style="width: 90%;" name="SerchComment">
-							<td style="width: 20%"><input type="submit" value="댓글 작성">
+							<td style="width: 20%; padding-top: 5px; padding-bottom: 5px;"><input type="submit" value="댓글 작성">
 					</table>
 				</form>
 			</div>
 		</div>
 
 		<!-- footer -->
-		<div
-			style="background-color: #C6EBED; height: 150px; margin-top: 100px; text-align: center;">
-			<font style="line-height: 150px">Copyright ⓒ2020. 배승수. All
-				rights reserved.</font>
-		</div>
+		<jsp:include page="footer.jsp"/>
 	</div>
 </body>
 </html>

@@ -70,7 +70,6 @@ public class crawl extends HttpServlet {
 		
 		ServletContext context =getServletContext();
         RequestDispatcher dispatcher = context.getRequestDispatcher("/serchForm.jsp"); //넘길 페이지 주소
-        dispatcher.forward(request, response);
+        dispatcher.forward(request, response);   
 	}
-
 }

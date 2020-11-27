@@ -109,5 +109,29 @@ public class BoardDAO {
 		}
 	}
 	
-	
+	//메인화면에 게시판 보여주는데~ 리미트어캐쓰누~~
+	public ArrayList<BoardDTO> viewAllMain(){
+		String sql = "select * from border";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			ArrayList<BoardDTO> borderList = new ArrayList<BoardDTO>();
+			
+			while(rs.next()) {
+				BoardDTO borderDTO = new BoardDTO();
+				borderDTO.setIdx(rs.getString(1));
+				borderDTO.setTitle(rs.getString(2));
+				borderDTO.setWriter(rs.getString(3));
+				borderDTO.setDate(rs.getString(4));
+				borderDTO.setHit(rs.getString(5));
+				borderList.add(borderDTO);
+			}
+			return borderList;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
 }

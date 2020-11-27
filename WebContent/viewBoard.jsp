@@ -8,6 +8,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="css/defult.css" rel="stylesheet" type="text/css"
+	media="all" />
 <title>Insert title here</title>
 </head>
 <body style="margin: 0">
@@ -53,37 +55,24 @@ String sessionId = (String)request.getAttribute("nickname"); // 현재 로그인
 		</div>
 
 		<div style="text-align: center; margin-top: 30px;">
-			<div style="display: inline-block;">
-				<div style="background-color: #FFFFFF">
-					<div>
-						<div style="float: left;">
-							작성자 : <%=writer %>
-						</div>
-						<div style="float: left;">
-							작성일 : <%=datestr %>
-						</div>
-						<div style="float: left;">
-							조회수 : <%=hit %>
-						</div>
-					</div>
-					
-					<div>
-						제목 : <%=title %>
-					</div>
-					
-					<div>
-						내용 : <%=comment %>
-					</div>
-				</div>
+			<div style="width: auto; height: auto; display: inline-block; background-color: #FFFFFF; border: 1px solid black; border-radius: 10px;">
+				<table style="width: 600px; height: 100%; text-align: left; border-collapse: collapse;">
+					<tr>
+						<td class="viewTd"><font size="4px">작성자 : <%=writer%></font>
+						<td class="viewTd"><font size="4px">조회수 : <%=hit%></font>
+						<td class="viewTd"><font size="4px">작성일 : <%=datestr%></font>
+					<tr bgcolor="#000000">
+						<td class="viewTd" colspan="3"><font size = "4px" color="#FFFFFF">제목 | <%=title%></font>
+					<tr>
+						<td class="viewTd" colspan="3"><font size = "4px">내용</font>
+					<tr>
+						<td style="padding-left: 30px; padding-top:30px; height: 300px;" colspan="3" valign="top"><%=comment%>
+				</table>
 			</div>
 		</div>
-		
+
 		<!-- footer -->
-		<div
-			style="background-color: #C6EBED; height: 150px; margin-top: 100px; text-align: center;">
-			<font style="line-height: 150px">Copyright ⓒ2020. 배승수. All
-				rights reserved.</font>
-		</div>
+		<jsp:include page="footer.jsp"/>
 		
 	</div>
 </body>
