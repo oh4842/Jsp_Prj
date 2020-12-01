@@ -1,5 +1,6 @@
 @charset 'UTF-8';
 
+/*사용*/
 .mainall{
 	width: 100%;
 	height: auto;
@@ -49,3 +50,37 @@
 }
 
 /* 사용 */
+.paddingTB10{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+/* 사용 */
+.bodyZero{
+	margin: 0;
+}
+
+/*사용*/
+.btn {
+	box-shadow:inset 0px 1px 0px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:맑은고딕;
+	font-size:15px;
+	font-weight:bold;
+	padding:4px 10px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}

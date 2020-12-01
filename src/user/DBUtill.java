@@ -9,9 +9,9 @@ import java.sql.Statement;
 import DTO.Member;
 
 public class DBUtill {
-	// dao : µ¥ÀÌÅÍº£ÀÌ½º Á¢±Ù °´Ã¼ÀÇ ¾àÀÚ·Î¼­
-	// ½ÇÁúÀûÀ¸·Î db¿¡¼­ È¸¿øÁ¤º¸ ºÒ·¯¿À°Å³ª db¿¡ È¸¿øÁ¤º¸ ³ÖÀ»¶§
-	// mysql¿¡ Á¢¼ÓÇØ ÁÖ´Â ºÎºÐ
+	// dao : ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·Î¼ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½Å³ï¿½ dbï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// mysqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Îºï¿½
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private Connection conn;
@@ -19,7 +19,7 @@ public class DBUtill {
 	public DBUtill() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String dbURL = "jdbc:mysql://localhost:3306/jspprj?serverTimezone=UTC"; // localhost:3306 Æ÷Æ®´Â ÄÄÇ»ÅÍ¼³Ä¡µÈ mysqlÁÖ¼Ò
+			String dbURL = "jdbc:mysql://localhost:3306/jspprj?serverTimezone=UTC"; // localhost:3306 ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½Í¼ï¿½Ä¡ï¿½ï¿½ mysqlï¿½Ö¼ï¿½
 			/* useUnicode=true&characterEncoding=UTF-8 */
 			String dbID = "root";
 			String dbPassword = "1234";
@@ -29,11 +29,11 @@ public class DBUtill {
 		}
 	}
 
-	public static Connection DBDAO() { // »ý¼ºÀÚ ½ÇÇàµÉ¶§¸¶´Ù ÀÚµ¿À¸·Î db¿¬°áÀÌ ÀÌ·ç¾î Áú ¼ö ÀÖµµ·ÏÇÔ
+	public static Connection DBDAO() { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String dbURL = "jdbc:mysql://localhost:3306/jspprj?serverTimezone=UTC"; // localhost:3306 Æ÷Æ®´Â ÄÄÇ»ÅÍ¼³Ä¡µÈ mysqlÁÖ¼Ò
+			String dbURL = "jdbc:mysql://localhost:3306/jspprj?serverTimezone=UTC"; // localhost:3306 ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½Í¼ï¿½Ä¡ï¿½ï¿½ mysqlï¿½Ö¼ï¿½
 			/* useUnicode=true&characterEncoding=UTF-8 */
 			String dbID = "root";
 			String dbPassword = "1234";
@@ -64,7 +64,7 @@ public class DBUtill {
 		return false;
 	}
 
-	// À¯Àú Á¤º¸¸¦ °¡Á®¿À´Â ÇÔ¼ö
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
 	public Member userdata(String id) {
 
 		String sql = "select id, nickname from member where id = ?";

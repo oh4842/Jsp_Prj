@@ -109,9 +109,9 @@ public class BoardDAO {
 		}
 	}
 	
-	//메인화면에 게시판 보여주는데~ 리미트어캐쓰누~~
+	//메인화면에 게시판 보여주는데~ 리미트어캐쓰누~~미ㅣㅣㅣㅣㅣ완성
 	public ArrayList<BoardDTO> viewAllMain(){
-		String sql = "select * from border";
+		String sql = "select id, title from border order by id desc limit 8";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -123,9 +123,6 @@ public class BoardDAO {
 				BoardDTO borderDTO = new BoardDTO();
 				borderDTO.setIdx(rs.getString(1));
 				borderDTO.setTitle(rs.getString(2));
-				borderDTO.setWriter(rs.getString(3));
-				borderDTO.setDate(rs.getString(4));
-				borderDTO.setHit(rs.getString(5));
 				borderList.add(borderDTO);
 			}
 			return borderList;
@@ -133,5 +130,18 @@ public class BoardDAO {
 			// TODO: handle exception
 		}
 		return null;
+	}
+	
+	//내 글 삭제
+	public void deleteMyWrite(BoardDTO borBoardDTO) {
+		String sql = "delete from border where idx = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			System.out.println("함수실행" + borBoardDTO.getIdx());
+			pstmt.setString(1, borBoardDTO.getIdx());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 }

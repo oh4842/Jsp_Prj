@@ -7,7 +7,7 @@
 <link href="css/defult.css" rel="stylesheet" type="text/css" media="all" />
 <title>메인화면</title>
 </head>
-<body style="margin: 0">
+<body class="bodyZero">
 	<!-- 전체 -->
 	<div class="mainall">
 		<!-- header -->
@@ -43,7 +43,7 @@
 					<p>
 						<input type="text"
 							style="border-radius: 5px; width: 500px; height: 20px"
-							name="serch"> <input type="submit" value="검색"
+							name="serch"> <input type="submit" value="검색" class="btn"
 							style="margin-left: 50px">
 				</div>
 			</form>
@@ -79,19 +79,18 @@
 					style="float: right; width: 14%; text-align: left; border-radius: 10px; border: 1px solid black; height: 100%;">
 					<div style="margin-left: 20px; margin-top: 10px">아이디</div>
 					<div style="margin-left: 20px; margin-top: 20px">
-						<input type="text" style="width: 170px;" name="loginid">
+						<input type="text" style="width: 200px;" name="loginid">
 					</div>
 					<div style="margin-left: 20px; margin-top: 20px">비밀번호</div>
 					<div style="margin-left: 20px; margin-top: 20px">
-						<input type="password" style="width: 170px;" name="loginpassword">
+						<input type="password" style="width: 200px;" name="loginpassword">
 						<div
 							style="float: left; width: 30%; margin: 0 auto; margin-top: 20px; margin-bottom: 10px;">
-							<input type="submit" value="로그인">
+							<input type="submit" class="btn" value="로그인">
 						</div>
 						<div
 							style="float: left; width: 30%; margin: 0 auto; margin-top: 20px; margin-bottom: 10px;'">
-							<a href="signUpForm.jsp"><input type="button" value="회원가입"
-								style="margin-left: 50px"></a>
+							<a href="signUpForm.jsp"><input type="button" value="회원가입" class="btn" style="margin-left: 50px"></a>
 						</div>
 					</div>
 				</div>

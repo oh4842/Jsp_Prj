@@ -3,19 +3,17 @@
 <%@page import="java.util.Date"%>
 <%@page import="DAO.BoardDAO"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/defult.css" rel="stylesheet" type="text/css"
-	media="all" />
+<link href="css/defult.css" rel="stylesheet" type="text/css" media="all" />
 <title>자유 게시판</title>
 </head>
 <body style="margin: 0">
 	<%
-		Date date = new Date();
+	Date date = new Date();
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 
 	BoardDAO boardDAO = new BoardDAO();
@@ -24,25 +22,7 @@
 	<!-- 전체 -->
 	<div style="width: 100%; height: auto; background-color: #F8F6F6;">
 		<!-- header -->
-		<div
-			style="height: 300px; background-image: url('image/boardlogo.png'); background-size: cover;">
-			<div style="width: 100%; height: auto;">
-				<div style="float: left; margin-left: 200px; margin-top: 30px;">
-					<img alt="게시판 로고" src="image/mainlogo.png"
-						style="width: 100px; height: 100px;">
-				</div>
-
-				<div style="float: right; margin-right: 200px; margin-top: 50px;">
-					<ul style="margin: 0; padding: 0;">
-						<li
-							style="float: left; list-style: none; padding: 10px 0px 0px 50px;">
-							<a href="index.jsp"
-							style="color: #FFFFFF; text-decoration: none;"><font
-								size="4px">Home</font></a>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<jsp:include page="subheader.jsp" />
 
 		<!-- body -->
 		<div
@@ -59,19 +39,18 @@
 						<div>
 							<div style="margin-left: 20px; float: left;">아이디</div>
 							<div style="margin-left: 20px; margin-top: 20px; float: left;">
-								<input type="text" style="width: 180px;" name="loginid">
+								<input type="text" style="width: 200px;" name="loginid">
 							</div>
 							<div style="margin-left: 20px; margin-top: 20px; float: left;">비밀번호</div>
 							<div style="margin-left: 20px; margin-top: 20px;">
-								<input type="password" style="width: 180px;"
-									name="loginpassword">
+								<input type="password" style="width: 200px;" name="loginpassword">
 								<div
 									style="float: left; width: 30%; margin: 0 auto; margin-top: 20px; margin-bottom: 10px;">
-									<input type="submit" value="로그인">
+									<input type="submit" class="btn" value="로그인">
 								</div>
 								<div
 									style="float: left; width: 30%; margin: 0 auto; margin-top: 20px; margin-bottom: 10px;'">
-									<a href="signUpForm.jsp"><input type="button" value="회원가입"
+									<a href="signUpForm.jsp"><input type="button" class="btn" value="회원가입"
 										style="margin-left: 50px"></a>
 								</div>
 							</div>
@@ -102,6 +81,9 @@
 						<tr>
 							<td colspan="5"
 								style="border-bottom: thick double gray; padding-top: 5px; padding-bottom: 5px;">게시판
+
+
+							
 						<tr>
 							<td class="freeTd" style="width: 100px;">번호
 							<td class="freeTd" style="width: 500px;">제목
@@ -124,16 +106,16 @@
  	}
  %>
 						<tr>
-							<td colspan="5" style="text-align: right;"><a
-								href="BorderWrite.jsp"><input type="button" value="글쓰기"></a>
+							<td class="paddingTB10" colspan="5" style="text-align: right;"><a
+								href="BorderWrite.jsp"><input type="button" class="btn" value="글쓰기" style="margin-right: 10px;"></a>
 					</table>
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- footer -->
-		<jsp:include page="footer.jsp"/>
-		
+		<jsp:include page="footer.jsp" />
+
 	</div>
 
 </body>

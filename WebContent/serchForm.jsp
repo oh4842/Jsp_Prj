@@ -13,29 +13,11 @@
 <meta charset="UTF-8">
 <title>전적검색</title>
 </head>
-<body style="margin: 0">
+<body class="bodyZero">
 	<!-- 전체 -->
 	<div style="width: 100%; height: auto; background-color: #F8F6F6;">
 		<!-- header -->
-		<div
-			style="height: 300px; background-image: url('image/boardlogo.png'); background-size: cover;">
-			<div style="width: 100%; height: auto;">
-				<div style="float: left; margin-left: 200px; margin-top: 30px;">
-					<img alt="게시판 로고" src="image/mainlogo.png"
-						style="width: 100px; height: 100px;">
-				</div>
-
-				<div style="float: right; margin-right: 200px; margin-top: 50px;">
-					<ul style="margin: 0; padding: 0;">
-						<li
-							style="float: left; list-style: none; padding: 10px 0px 0px 50px;">
-							<a href="index.jsp"
-							style="color: #FFFFFF; text-decoration: none;"><font
-								size="4px">Home</font></a>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<jsp:include page="subheader.jsp"/>
 
 		<%
 		String tierrank, points, wins, losses, winratio, name, ranking, profileIcon;
@@ -61,44 +43,41 @@
 			style="margin-top: 30px; margin-left: 200px; margin-right: 200px;">
 			<!-- 티어 및 정보표시 -->
 			<div
-				style="border: 1px solid black; border-radius: 10px; height: 200px; background-color: #FFFFFF;">
+				style="border: 2px solid black; border-radius: 10px; height: 200px; background-color: #E0F8F7;">
 				<!-- 소환사아이콘 -->
 				<div
 					style="float: left; width: 100px; height: 100px; text-align: center;">
 					<p>
 						<img alt="전적정보 소환사 아이콘" src="image/UserLogo.png" width="150px" height="130px">
 					<p>
-						<font style="margin-left: 40px" size="4px"><%=profileIcon%></font>
-						
+						<font style="margin-left: 40px" size="4px" face="맑은고딕"><strong><%=profileIcon%></strong></font>
 				</div>
 
-				<div style="float: left; margin-left: 60px; text-align: left;">
-					<div style="padding-top: 5px; padding-bottom: 5px;">
-						<font size="4px"><%=name%> </font>
+				<div style="float: left; margin-left: 70px; text-align: left;">
+					<div class="paddingTB10">
+						<font size="4px" face="맑은고딕"><strong><%=name%></strong></font>
 					</div>
-					<div style="padding-top: 5px; padding-bottom: 5px;">
-						<font size="4px">래더 랭킹 <%=ranking%>위
-						</font>
+					<div class="paddingTB10">
+						<font size="4px" face="맑은고딕"><strong>래더 랭킹 <%=ranking%>위</strong></font>
 					</div>
-					<div style="padding-top: 5px; padding-bottom: 5px;">
-						<font size="4px">티어 <%=tierrank%> | <%=points%></font>
+					<div class="paddingTB10">
+						<font size="4px" face="맑은고딕"><strong>티어 <%=tierrank%> | <%=points%></strong></font>
 					</div>
-					<div style="padding-top: 5px; padding-bottom: 5px;">
-						<font size="4px">승리 <%=wins%> / 패배 <%=losses%> / 승률 <%=winratio%></font>
+					<div class="paddingTB10">
+						<font size="4px" face="맑은고딕"><strong>승리 <%=wins%> / 패배 <%=losses%> / 승률 <%=winratio%></strong></font>
 					</div>
 				</div>
 			</div>
-			
 
 			<div
 				style="text-align: center; border: 1px solid black; height: auto; width: 100%; margin-top: 30px; background-color: #FFFFFF;">
 				<form action="./serchComWrite" method="post">
-					<input type="hidden" name="username" value="<%=name%>">
+					
 					<table style="width: 100%; border-collapse: collapse;">
 						<tr>
 							<td colspan="4" style="border-bottom: thick double gray; padding-top: 10px; padding-bottom: 10px;">유저평가	
 						<tr>
-							<td class="freeTd" style="width: 10%;">번호
+							<td class="freeTd" style="width: 10%;">
 							<td class="freeTd" style="width: 60%;">내용
 							<td class="freeTd" style="width: 10%;">작성자
 							<td class="freeTd" style="width: 20%;">작성일
@@ -110,20 +89,21 @@
 								String datestr = serchList.get(i).getDate();
 							%>
 						<tr>
-							<td class="freeTd"><font size="5px">┕</font>
+							<td class="freeTd"><font size="5px">└</font>
 							<td class="freeTd"><%=comment %>
 							<td class="freeTd"><%=writer %>
 							<td class="freeTd"><%=datestr %>
 							<%
 								}
 							%>
+							<input type="hidden" name="username" value="<%=name%>">
 							<input type="hidden" name = "tierrank" value="<%=tierrank%>">
 							<input type="hidden" name = "name" value="<%=name%>">
 							<input type="hidden" name = "points" value="<%=points%>">
 							<input type="hidden" name = "wins" value="<%=wins%>">
-			<input type="hidden" name = "losses" value="<%=losses%>">
-			<input type="hidden" name = "winratio" value="<%=winratio%>">
-			<input type="hidden" name = "profileIcon" value="<%=profileIcon%>">
+							<input type="hidden" name = "losses" value="<%=losses%>">
+							<input type="hidden" name = "winratio" value="<%=winratio%>">
+							<input type="hidden" name = "profileIcon" value="<%=profileIcon%>">
 						<tr>
 							<td style="width: 80%; padding-top: 5px; padding-bottom: 5px;" colspan="3"><input type="text"
 								style="width: 90%;" name="SerchComment">
