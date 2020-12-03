@@ -1,3 +1,6 @@
+<%@page import="DTO.BoardDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAO.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +11,10 @@
 <title>메인화면</title>
 </head>
 <body class="bodyZero">
+<%
+BoardDAO bDAO = new BoardDAO();
+ArrayList<BoardDTO> boardList = bDAO.viewAllMain();
+%>
 	<!-- 전체 -->
 	<div class="mainall">
 		<!-- header -->
@@ -53,7 +60,24 @@
 		<div
 			style="width: 100%; height: auto; display: inline-block; margin-top: 20px; text-align: center;">
 			<div style="float: left; width: 25%;">
-				<h2>게시판</h2>
+				<h2 style="margin-bottom: 30px;">게시판</h2>
+				<table style="border-collapse: collapse; width: 90%; margin-left: 35px; border: 1px solid black;">
+					<tr>
+						<td class="freeTd" style="width: 20%; background-color: #F2F2F2;">번호
+						<td class="freeTd" style="width: 80%; background-color: #F2F2F2;">제목
+						<%
+							for (int i = 0; i < boardList.size(); i++) {
+							String idx = boardList.get(i).getIdx();
+							String title = boardList.get(i).getTitle();
+						%>
+						<tr>
+							<td class="freeTd"><%=idx%>
+							<td class="freeTd"><a href="viewBoard.jsp?id=<%=idx%>"><%=title%></a>
+						<%
+ 						}
+ 						%>
+					
+				</table>
 			</div>
 			<div style="float: left; width: 30%;">
 				<h2 style="margin-bottom: 30px;">라인 관리법</h2>

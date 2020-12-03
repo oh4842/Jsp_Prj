@@ -99,7 +99,7 @@ public class BoardDAO {
 	}
 	// 조회수 증가
 	public void hitUpdate(String idx) {
-		String sql = "update border set hit = hit + 1 where idx = ?";
+		String sql = "update jspprj.border set hit = hit + 1 where idx = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, idx);
@@ -109,9 +109,9 @@ public class BoardDAO {
 		}
 	}
 	
-	//메인화면에 게시판 보여주는데~ 리미트어캐쓰누~~미ㅣㅣㅣㅣㅣ완성
+	//메인화면에 게시판 보여주는
 	public ArrayList<BoardDTO> viewAllMain(){
-		String sql = "select id, title from border order by id desc limit 8";
+		String sql = "select idx, title from jspprj.border order by idx desc limit 4";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -134,11 +134,23 @@ public class BoardDAO {
 	
 	//내 글 삭제
 	public void deleteMyWrite(BoardDTO borBoardDTO) {
-		String sql = "delete from border where idx = ?";
+		String sql = "delete from jspprj.border where idx = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			System.out.println("함수실행" + borBoardDTO.getIdx());
 			pstmt.setString(1, borBoardDTO.getIdx());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void UpdateMyWrite(BoardDTO boardDTO, String idx) {
+		String sql = "update jspprj.border set title = ?, comment = ? where idx = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, boardDTO.getTitle());
+			pstmt.setString(2, boardDTO.getComment());
+			pstmt.setString(3, idx);
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception

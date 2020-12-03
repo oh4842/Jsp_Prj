@@ -19,15 +19,15 @@ BoardDAO boardDAO = new BoardDAO();
 BoardDTO boardDTO = new BoardDTO();
 String idx, title, comment, writer, datestr, hit;
 
-idx = request.getParameter("id");
-boardDAO.hitUpdate(idx);
-boardDTO = boardDAO.viewSelectBoard(idx);
+idx = request.getParameter("idx");
+//boardDAO.hitUpdate(idx);
+//boardDTO = boardDAO.viewSelectBoard(idx);
 
-title = boardDTO.getTitle();
-comment = boardDTO.getComment();
-writer = boardDTO.getWriter();
-datestr = boardDTO.getDate();
-hit = boardDTO.getHit();
+title = request.getParameter("title");
+comment = request.getParameter("comment");
+writer = request.getParameter("writer");
+datestr = request.getParameter("datestr");
+hit = request.getParameter("hit");
 
 String sessionId = (String)request.getAttribute("nickname"); // 현재 로그인 되어있는 아이디
 %>
@@ -37,37 +37,28 @@ String sessionId = (String)request.getAttribute("nickname"); // 현재 로그인
 
 		<div style="text-align: center; margin-top: 30px;">
 			<div style="width: auto; height: auto; display: inline-block; background-color: #FFFFFF; border: 1px solid black; border-radius: 10px;">
+				<form action="./borderUpdate" method="post">
 				<table style="width: 600px; height: 100%; text-align: left; border-collapse: collapse;">
 					<tr>
 						<td class="viewTd"><font size="4px">작성자 : <%=writer%></font>
 						<td class="viewTd"><font size="4px">조회수 : <%=hit%></font>
 						<td class="viewTd"><font size="4px">작성일 : <%=datestr%></font>
 					<tr bgcolor="#000000">
-						<td class="viewTd" colspan="3"><font size = "4px" color="#FFFFFF">제목 | <%=title%></font>
+						<td class="viewTd" colspan="3"><font size = "4px" color="#FFFFFF">제목 | <input type="text" name = "title" style="width: 80%"></font>
 					<tr>
 						<td class="viewTd" colspan="3"><font size = "4px">내용</font>
 					<tr>
-						<td style="padding-left: 30px; padding-top:30px; height: 300px; border-bottom: 1px double black;" colspan="3" valign="top"><%=comment%>
+						<td style="padding: 30px 30px 30px 30px; height: 300px; border-bottom: 1px double black;" colspan="3" valign="top">
+						<textarea rows="20" cols="80" name = "comment"></textarea>
 					<tr>
 						<td style="text-align: right;" colspan="3">
 						
-						<form action="BoardUpdateForm.jsp" method="post">
 							<input type="hidden" name="idx" value="<%=idx%>">
-							<input type="hidden" name = "title" value="<%=title %>">
-							<input type="hidden" name = "comment" value="<%=comment %>">
-							<input type="hidden" name = "writer" value="<%=writer %>">
-							<input type="hidden" name = "datestr" value="<%=datestr %>">
-							<input type="hidden" name = "hit" value="<%=hit %>">
 							<input style="margin-right: 20px;" type="submit" class="btn" value="수정">
-						</form>
-							
-						<form action="./deleteMyWrite" method="post">
-							<input type="hidden" name="idx" value="<%=idx%>">
-							<input type="hidden" name="writer" value="<%=writer%>">
-							<input style="margin-right: 20px;" type="submit" class="btn" value="삭제">
-						</form>
+						
 						<a href="FreeBorderForm.jsp"><input style="margin-right: 20px;" type="button" class="btn" value="뒤로가기"></a>
 				</table>
+				</form>
 			</div>
 		</div>
 

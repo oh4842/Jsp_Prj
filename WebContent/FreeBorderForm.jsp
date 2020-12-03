@@ -81,15 +81,13 @@
 						<tr>
 							<td colspan="5"
 								style="border-bottom: thick double gray; padding-top: 5px; padding-bottom: 5px;">게시판
-
-
-							
 						<tr>
 							<td class="freeTd" style="width: 100px;">번호
 							<td class="freeTd" style="width: 500px;">제목
 							<td class="freeTd" style="width: 200px;">작성자
 							<td class="freeTd" style="width: 200px;">작성일
-							<td class="freeTd" style="width: 100px;">조회수 <%
+							<td class="freeTd" style="width: 100px;">조회수
+							<%
 								for (int i = 0; i < boardList.size(); i++) {
 								String idx = boardList.get(i).getIdx();
 								String title = boardList.get(i).getTitle();
