@@ -111,7 +111,7 @@ public class BoardDAO {
 	
 	//메인화면에 게시판 보여주는
 	public ArrayList<BoardDTO> viewAllMain(){
-		String sql = "select idx, title from jspprj.border order by idx desc limit 4";
+		String sql = "select idx, title from jspprj.border order by idx desc limit 7";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);

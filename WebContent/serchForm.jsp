@@ -47,10 +47,78 @@
 				<!-- 소환사아이콘 -->
 				<div
 					style="float: left; width: 100px; height: 100px; text-align: center;">
-					<p>
-						<img alt="전적정보 소환사 아이콘" src="image/UserLogo.png" width="150px" height="130px">
+					<%
+						if (tierrank.contains("Iron")){
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/iron.png" width="150px"
+							height="130px">
+					<%
+						}else if (tierrank.contains("Bronze")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/bronze.png" width="150px"
+							height="130px">
+					<%
+						} else if (tierrank.contains("Silver")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/silver.png" width="150px"
+							height="130px">
+					<%
+						} else if (tierrank.contains("Gold")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/gold.png" width="150px"
+							height="130px">
+					
+					<%
+						} else if (tierrank.contains("Platinum")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/platinum.png" width="150px"
+							height="130px">
+					
+					<%
+						} else if (tierrank.contains("Diamond")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/diamond.png" width="150px"
+							height="130px">
+					
+					<%
+						} else if (tierrank.contains("Master")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/master.png" width="150px"
+							height="130px">
+					
+					<%
+						} else if (tierrank.contains("Grand")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/grandmaster.png" width="150px"
+							height="130px">
+					
+					<%
+						} else if (tierrank.contains("Challenger")) {
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/challenger.png" width="150px"
+							height="130px">
+					
+					<%
+						} else if (tierrank.contains(null)){
+					%>
+						<p>
+						<img alt="전적정보 소환사 아이콘" src="image/default.png" width="150px"
+							height="130px">
+					<%
+					}
+					%>
 					<p>
 						<font style="margin-left: 40px" size="4px" face="맑은고딕"><strong><%=profileIcon%></strong></font>
+				
 				</div>
 
 				<div style="float: left; margin-left: 70px; text-align: left;">
@@ -105,9 +173,9 @@
 							<input type="hidden" name = "winratio" value="<%=winratio%>">
 							<input type="hidden" name = "profileIcon" value="<%=profileIcon%>">
 						<tr>
-							<td style="width: 80%; padding-top: 5px; padding-bottom: 5px;" colspan="3"><input type="text"
+							<td class="paddingTB10" style="width: 80%;" colspan="3"><input type="text"
 								style="width: 90%;" name="SerchComment">
-							<td style="width: 20%; padding-top: 5px; padding-bottom: 5px;"><input type="submit" value="댓글 작성">
+							<td class="paddingTB10" style="width: 20%;"><input type="submit" value="댓글 작성">
 					</table>
 				</form>
 			</div>

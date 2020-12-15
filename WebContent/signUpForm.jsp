@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/defult.css" rel="stylesheet" type="text/css" media="all" />
 <meta charset="UTF-8">
 <title>로그인 화면</title>
 </head>
@@ -36,7 +37,7 @@
 				</div>
 
 				<div style="margin-top: 30px">
-					<input type="submit" value="회원가입">
+					<input type="submit" class="btn" value="회원가입">
 				</div>
 			</div>
 		</div>

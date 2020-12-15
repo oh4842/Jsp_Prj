@@ -97,7 +97,7 @@
 							%>
 						<tr>
 							<td class="freeTd"><%=idx%>
-							<td class="freeTd"><a href="viewBoard.jsp?id=<%=idx%>"><%=title%></a>
+							<th class="freeTd"><a style="text-decoration: none; color: #000000" href="viewBoard.jsp?id=<%=idx%>"><%=title%></a>
 							<td class="freeTd"><%=writer%>
 							<td class="freeTd"><%=dateStr%>
 							<td class="freeTd"><%=hit%> <%

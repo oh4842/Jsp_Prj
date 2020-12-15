@@ -27,7 +27,7 @@
 						<tr>
 							<td colspan="2" style="text-align: right; padding-top: 10px; padding-bottom: 10px;">
 							<input class="btn" type="submit" value="글쓰기" style="margin-right: 30px;">
-							<a href="index.jsp"><input class="btn" type="button" value="홈으로" style="margin-right: 30px;"></a>						
+							<a href="FreeBorderForm.jsp"><input class="btn" type="button" value="뒤로가기" style="margin-right: 30px;"></a>									
 					</table>
 				</form>
 			</div>

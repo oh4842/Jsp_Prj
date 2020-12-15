@@ -36,9 +36,6 @@ ArrayList<BoardDTO> boardList = bDAO.viewAllMain();
 					<li class="indexli"><a href="FreeBorderForm.jsp"
 						style="color: #FFFFFF; text-decoration: none;"><font
 							size="4px">커뮤니티</font></a>
-					<li class="indexli"><a href="#"
-						style="color: #FFFFFF; text-decoration: none;"><font
-							size="4px">사용방법</font></a>
 				</ul>
 			</div>
 
@@ -72,7 +69,7 @@ ArrayList<BoardDTO> boardList = bDAO.viewAllMain();
 						%>
 						<tr>
 							<td class="freeTd"><%=idx%>
-							<td class="freeTd"><a href="viewBoard.jsp?id=<%=idx%>"><%=title%></a>
+							<th class="freeTd"><a style="text-decoration: none; color: #000000" href="viewBoard.jsp?id=<%=idx%>"><%=title%></a>
 						<%
  						}
  						%>
