@@ -23,37 +23,38 @@
 ---
 ## **--전적검색 화면 구성--**
 
-  + https://user-images.githubusercontent.com/32236195/130584092-47f23480-f20f-4e21-a1c2-0af01724f123.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584092-47f23480-f20f-4e21-a1c2-0af01724f123.JPG">
 ---
 ## **--게시판 화면 구성--**
 
-  + https://user-images.githubusercontent.com/32236195/130584093-f5fce481-6fc6-45bb-926d-71a4029cdaea.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584093-f5fce481-6fc6-45bb-926d-71a4029cdaea.JPG">
 ---
 ## **--UI 네비게이션--**
 
-  + https://user-images.githubusercontent.com/32236195/130584095-f89d6120-8737-4148-9b84-f56990e73865.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584095-f89d6120-8737-4148-9b84-f56990e73865.JPG">
 ---
 ## **--DB Table 구성도--**
 
-  + https://user-images.githubusercontent.com/32236195/130584096-42d78722-c6f1-44e8-b539-e87d9a53e986.JPG
-  + https://user-images.githubusercontent.com/32236195/130584102-11264458-f56c-4f1e-a55f-fd1eeaec4050.JPG
-  + https://user-images.githubusercontent.com/32236195/130584104-53976b55-3c71-438e-8934-8833d35fb453.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584096-42d78722-c6f1-44e8-b539-e87d9a53e986.JPG">
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584102-11264458-f56c-4f1e-a55f-fd1eeaec4050.JPG">
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584104-53976b55-3c71-438e-8934-8833d35fb453.JPG">
 ---
 ## **--결과 스크린 샷--**
+
   + ### **--메인--**
-  + https://user-images.githubusercontent.com/32236195/130584106-351e97fa-1343-4f6a-a049-6eea58d71d97.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584106-351e97fa-1343-4f6a-a049-6eea58d71d97.JPG">
   + ### **--게시판--**
-  + https://user-images.githubusercontent.com/32236195/130584109-7ca0d621-7851-4590-8014-93876f6ed835.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584109-7ca0d621-7851-4590-8014-93876f6ed835.JPG">
   + ### **--전적 검색--**
-  + https://user-images.githubusercontent.com/32236195/130584112-882ec03d-098e-4eda-817c-54cf351f0682.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584112-882ec03d-098e-4eda-817c-54cf351f0682.JPG">
   + ### **--글 열람--**
-  + https://user-images.githubusercontent.com/32236195/130584115-8acd0d42-8ec8-4f1e-bce8-4a7aef664c75.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584115-8acd0d42-8ec8-4f1e-bce8-4a7aef664c75.JPG">
   + ### **--글 쓰기--**
-  + https://user-images.githubusercontent.com/32236195/130584117-0b1d0633-af52-401b-9ac6-7a704c61475f.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584117-0b1d0633-af52-401b-9ac6-7a704c61475f.JPG">
   + ### **--글 수정--**
-  + https://user-images.githubusercontent.com/32236195/130584120-1c6f2a15-a40a-40c4-80c1-34577e517d44.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584120-1c6f2a15-a40a-40c4-80c1-34577e517d44.JPG">
   + ### **--회원가입--**
-  + https://user-images.githubusercontent.com/32236195/130584121-0f0121bf-6b9a-4bf0-afde-219353e60a14.JPG
+  + <img src ="https://user-images.githubusercontent.com/32236195/130584121-0f0121bf-6b9a-4bf0-afde-219353e60a14.JPG">
 ---
 ## **--기능 사용--**
   + MySql WorkBench를 이용한 DB 구현
