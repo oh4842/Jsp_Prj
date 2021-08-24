@@ -19,7 +19,7 @@
 ---
 ## **--메인화면 구성--**
 
-  + https://user-images.githubusercontent.com/32236195/130584090-9838ff01-d8a6-4168-8125-7718c47dd617.JPG
+  + <img src = "https://user-images.githubusercontent.com/32236195/130584090-9838ff01-d8a6-4168-8125-7718c47dd617.JPG">
 ---
 ## **--전적검색 화면 구성--**
 
